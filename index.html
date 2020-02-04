@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Azure Speech</title>
+    <link href="css/starbucks/style.starbucks.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/themes/prism.min.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <main id="main-content" role="main" class="px3 lg-px7">
+        <div class="relative flex-auto">
+            <div class="flex-auto">
+                <div class="size6of12 absoluteCenter-x">
+
+                    <h3 class="sb-heading mb2 color-textBlackSoft" tabindex="-1">
+                        Azure Speech Sample
+                    </h3>
+                    <div class="field mb2">
+                        <div class="field__inputWrapper flex">
+                            <label class="floatLabel color-textBlackSoft floatLabel--isActive" for="key">Speech API Key</label>
+                            <input id="key" class="fieldInput" value="001b96daebda42a78f5b2e8db30213a2" />
+                        </div>
+                    </div>
+
+                    <div class="field mb2">
+                        <div class="field__inputWrapper flex">
+                            <label class="floatLabel color-textBlackSoft floatLabel--isActive" for="regionOptions">Speech API Region</label>
+                            <input id="region" class="fieldInput" value="westus2" />
+                        </div>
+                    </div>
+
+                    <div class="field mb2">
+                        <div class="select "><label
+                                class="floatLabel color-textBlackSoft floatLabel--isActive select__floatLabel"
+                                for="languageOptions">Language</label>
+                            <!-- For the full list of supported languages see: https://docs.microsoft.com/azure/cognitive-services/speech-service/supported-languages -->
+                            <select id="languageOptions" class="select__input"
+                                onchange="ddlChange(this,'lbllanguageOptions')">
+                                <option value="ar-EG">Arabic - EG</option>
+                                <option value="ca-ES">Catalan - ES</option>
+                                <option value="da-DK">Danish - DK</option>
+                                <option value="da-DK">Danish - DK</option>
+                                <option value="de-DE">German - DE</option>
+                                <option value="en-AU">English - AU</option>
+                                <option value="en-CA">English - CA</option>
+                                <option value="en-GB">English - GB</option>
+                                <option value="en-IN">English - IN</option>
+                                <option value="en-NZ">English - NZ</option>
+                                <option value="en-US" selected="selected">English - US</option>
+                                <option value="es-ES">Spanish - ES</option>
+                                <option value="es-MX">Spanish - MX</option>
+                                <option value="fi-FI">Finnish - FI</option>
+                                <option value="fr-CA">French - CA</option>
+                                <option value="fr-FR">French - FR</option>
+                                <option value="hi-IN">Hindi - IN</option>
+                                <option value="it-IT">Italian - IT</option>
+                                <option value="ja-JP">Japanese - JP</option>
+                                <option value="ko-KR">Korean - KR</option>
+                                <option value="nb-NO">Norwegian - NO</option>
+                                <option value="nl-NL">Dutch - NL</option>
+                                <option value="pl-PL">Polish - PL</option>
+                                <option value="pt-BR">Portuguese - BR</option>
+                                <option value="pt-PT">Portuguese - PT</option>
+                                <option value="ru-RU">Russian - RU</option>
+                                <option value="sv-SE">Swedish - SE</option>
+                                <option value="zh-CN">Chinese - CN</option>
+                                <option value="zh-HK">Chinese - HK</option>
+                                <option value="zh-TW">Chinese - TW</option>
+                            </select>
+                            <span aria-hidden="true" class="select__selectedText"><label id="lbllanguageOptions">English
+                                    - US</label><svg viewBox="0 0 24 24" class="valign-middle select__icon"
+                                    preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false"
+                                    style="width: 28px; height: 28px; overflow: visible;">
+                                    <path
+                                        d="M11.96 15.5c-.206 0-.402-.084-.546-.232l-5.188-5.33c-.3-.31-.3-.81 0-1.12.3-.31.79-.31 1.093 0l4.64 4.767 4.723-4.853c.3-.31.79-.31 1.09 0 .303.31.303.812.002 1.122l-5.27 5.414c-.145.148-.34.232-.546.232">
+                                    </path>
+                                </svg></span>
+                        </div>
+                    </div>
+
+                    <div class="field mb2">
+                        <div class="field__inputWrapper flex">
+                            <label class="floatLabel color-textBlackSoft floatLabel--isActive" for="phrases">Phrases List (';' separated)</label>
+                            <input id="phrases" class="fieldInput" />
+                        </div>
+                    </div>
+
+                    <div class="field mb2">
+                        <button id="recognizeButton" class="sb-button sb-button--positive">Recognize</button>
+                        <button id="stopButton" disabled="disabled" class="sb-button sb-button--positive sb-button--black">STOP</button>
+                    </div>
+
+                    <div class="field mb2">
+                        <textarea id="result" style="display: inline-block;width:500px;height:200px"></textarea>
+                    </div>
+
+                    <div class="field mb2" style="display: none;">
+                        <div class="field__inputWrapper flex">
+                            <label class="floatLabel color-textBlackSoft floatLabel--isActive" for="appId">LUIS APP ID</label>
+                            <input id="appId" class="fieldInput" />
+                        </div>
+                    </div>
+
+                    <div class="field mb2" style="display: none;">
+                        <button id="getIntentsButton" class="sb-button sb-button--positive">Get Intents</button>
+                    </div>
+                </div>
+            </div>
+    </main>
+
+    <!-- Speech SDK REFERENCE -->
+    <script src="js\SpeechSDK-JavaScript-1.9.0\microsoft.cognitiveservices.speech.sdk.bundle-min.js"></script>
+    <script src="js\six_speech.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/components/prism-json.min.js"></script>
+</body>
+
+</html>
