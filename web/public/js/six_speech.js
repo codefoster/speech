@@ -126,6 +126,7 @@ document.addEventListener("DOMContentLoaded", function () {
         reco.sessionStarted = function (s, e) {
             window.console.log(e);
             statusDiv.innerHTML += "(sessionStarted) SessionId: " + e.sessionId + "\r\n";
+            
         };
 
         // Signals the end of a session with the speech service.
@@ -133,7 +134,10 @@ document.addEventListener("DOMContentLoaded", function () {
             window.console.log(e);
             statusDiv.innerHTML += "(sessionStopped) SessionId: " + e.sessionId + "\r\n";
             sdkStartContinousRecognitionBtn.disabled = false;
+            sdkStartContinousRecognitionBtn.classList.remove("sb-button--black");
+
             sdkStopContinousRecognitionBtn.disabled = true;
+            sdkStopContinousRecognitionBtn.classList.add("sb-button--black");
         };
 
         // Signals that the speech service has started to detect speech.
@@ -152,7 +156,10 @@ document.addEventListener("DOMContentLoaded", function () {
         reco.startContinuousRecognitionAsync();
 
         sdkStartContinousRecognitionBtn.disabled = true;
+        sdkStartContinousRecognitionBtn.classList.add("sb-button--black");
+
         sdkStopContinousRecognitionBtn.disabled = false;
+        sdkStopContinousRecognitionBtn.classList.remove("sb-button--black");
     });
 
     // Stops recognition and disposes of resources.
@@ -168,7 +175,10 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
         sdkStartContinousRecognitionBtn.disabled = false;
+        sdkStartContinousRecognitionBtn.classList.remove("sb-button--black");
+
         sdkStopContinousRecognitionBtn.disabled = true;
+        sdkStopContinousRecognitionBtn.classList.add("sb-button--black");
     });
 
     /*
@@ -420,7 +430,10 @@ document.addEventListener("DOMContentLoaded", function () {
             window.console.log(e);
             statusDiv.innerHTML += "(sessionStopped) SessionId: " + e.sessionId + "\r\n";
             sdkStartContinousRecognitionBtn.disabled = false;
+            sdkStartContinousRecognitionBtn.classList.remove("sb-button--black");
+
             sdkStopContinousRecognitionBtn.disabled = true;
+            sdkStopContinousRecognitionBtn.classList.add("sb-button--black");
         };
 
         // Signals that the speech service has started to detect speech.
@@ -477,12 +490,18 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
         sdkStartRecognizeOnceAsyncBtn.disabled = true;
+        sdkStartRecognizeOnceAsyncBtn.classList.add("sb-button--black");
+
         sdkStopRecognizeOnceAsyncBtn.disabled = false;
+        sdkStopRecognizeOnceAsyncBtn.classList.remove("sb-button--black");
     });
 
     sdkStopRecognizeOnceAsyncBtn.addEventListener("click", function () {
         sdkStartRecognizeOnceAsyncBtn.disabled = false;
+        sdkStartRecognizeOnceAsyncBtn.classList.remove("sb-button--black");
+
         sdkStopRecognizeOnceAsyncBtn.disabled = true;
+        sdkStopRecognizeOnceAsyncBtn.classList.add("sb-button--black");
 
         reco.close();
         reco = undefined;
@@ -597,7 +616,10 @@ document.addEventListener("DOMContentLoaded", function () {
             window.console.log(e);
             statusDiv.innerHTML += "(sessionStopped) SessionId: " + e.sessionId + "\r\n";
             sdkStartContinousRecognitionBtn.disabled = false;
+            sdkStartContinousRecognitionBtn.classList.remove("sb-button--black");
+
             sdkStopContinousRecognitionBtn.disabled = true;
+            sdkStopContinousRecognitionBtn.classList.add("sb-button--black");
         };
 
         // Signals that the speech service has started to detect speech.
@@ -662,12 +684,19 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
         sdkStartRecognizeOnceAsyncBtn.disabled = true;
+        sdkStartRecognizeOnceAsyncBtn.classList.add("sb-button--black");
+
         sdkStopRecognizeOnceAsyncBtn.disabled = false;
+        sdkStopRecognizeOnceAsyncBtn.classList.remove("sb-button--black");
+
     });
 
     sdkIntentStopRecognizeOnceAsyncBtn.addEventListener("click", function () {
         sdkStartRecognizeOnceAsyncBtn.disabled = false;
+        sdkStartRecognizeOnceAsyncBtn.classList.remove("sb-button--black");
+
         sdkStopRecognizeOnceAsyncBtn.disabled = true;
+        sdkStartRecognizeOnceAsyncBtn.classList.add("sb-button--black");
 
         reco.close();
         reco = undefined;
@@ -716,7 +745,10 @@ document.addEventListener("DOMContentLoaded", function () {
     Initialize(function (speechSdk) {
         SpeechSDK = speechSdk;
         sdkStartContinousRecognitionBtn.disabled = false;
+        sdkStartContinousRecognitionBtn.classList.remove("sb-button--black");
+
         sdkStartRecognizeOnceAsyncBtn.disabled = false;
+        sdkStartRecognizeOnceAsyncBtn.classList.remove("sb-button--black");
 
         // in case we have a function for getting an authorization token, call it.
         if (typeof RequestAuthorizationToken === "function") {
@@ -745,8 +777,8 @@ if (authorizationEndpoint) {
 // On document load resolve the Speech SDK dependency
 function Initialize(onComplete) {
     if (!!window.SpeechSDK) {
-       // document.getElementById('content').style.display = 'block';
-       // document.getElementById('warning').style.display = 'none';
+        // document.getElementById('content').style.display = 'block';
+        // document.getElementById('warning').style.display = 'none';
         onComplete(window.SpeechSDK);
     }
 }

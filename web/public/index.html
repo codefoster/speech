@@ -146,10 +146,18 @@
                     </div>
 
                     <div class="field mb2">
+                        <div class="field__inputWrapper flex">
+                            <label class="floatLabel color-textBlackSoft floatLabel--isActive" for="phrases">Phrases List (';' separated)</label>
+                            <input id="phrases" class="fieldInput" />
+                        </div>
+                    </div>
+
+
+                    <div class="field mb2">
                         <button id="speechsdkStartRecognizeOnceAsync"
                             Class="sb-button sb-button--positive">recognizeOnceAsync()</button>
                         <button id="speechsdkStopRecognizeOnceAsync" disabled="disabled"
-                            Class="sb-button sb-button--positive">STOP
+                            Class="sb-button sb-button--positive sb-button--black">STOP
                             recognizeOnceAsync()</button>
                     </div>
 
@@ -157,7 +165,7 @@
                         <button id="speechsdkStartContinuousRecognition"
                             Class="sb-button sb-button--positive">startContinuousRecognitionAsync()</button>
                         <button id="speechsdkStopContinuousRecognition" disabled="disabled"
-                            Class="sb-button sb-button--positive">STOP
+                            Class="sb-button sb-button--positive sb-button--black">STOP
                             stopContinuousRecognitionAsync()</button>
                     </div>
 
@@ -185,19 +193,12 @@
                         </div>
                     </div>
 
-                    <div class="field mb2">
-                        <div class="field__inputWrapper flex">
-                            <label class="floatLabel color-textBlackSoft floatLabel--isActive" for="phrases">Phrases
-                                (';' separated) List</label>
-                            <input id="phrases" class="fieldInput" />
-                        </div>
-                    </div>
-
+                    
                     <div class="field mb2">
                         <button id="speechsdkIntentStartRecognizeOnceAsync"
                             Class="sb-button sb-button--positive">recognizeOnceAsync()</button>
                         <button id="speechsdkIntentStopRecognizeOnceAsync" disabled="disabled"
-                            Class="sb-button sb-button--positive">STOP
+                            Class="sb-button sb-button--positive sb-button--black">STOP
                             recognizeOnceAsync()</button>
                     </div>
                 </div>
