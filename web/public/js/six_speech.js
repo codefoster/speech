@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
     languageTargetOptions = document.getElementById("languageTargetOptions");
     voiceOutput = document.getElementById("voiceOutput");
     regionOptions = document.getElementById("regionOptions");
-    formatOptions = document.getElementById("formatOptions");
+    //formatOptions = document.getElementById("formatOptions");
     //inputSource = document.getElementById("inputSource");
     //filePicker = document.getElementById('filePicker');
 

@@ -48,6 +48,15 @@
                     </div>
 
                     <div class="field mb2">
+                        <div class="field__inputWrapper flex">
+                            <label class="floatLabel color-textBlackSoft floatLabel--isActive" for="regionOptions">Speech API
+                                Region</label>
+                            <input id="regionOptions" class="fieldInput" />
+                        </div>
+                    </div>
+
+
+                    <div class="field mb2">
                         <div class="select "><label
                                 class="floatLabel color-textBlackSoft floatLabel--isActive select__floatLabel"
                                 for="languageOptions">Language</label>
@@ -96,55 +105,7 @@
                         </div>
                     </div>
 
-                    <div class="field mb2">
-                        <div class="select "><label
-                                class="floatLabel color-textBlackSoft floatLabel--isActive select__floatLabel"
-                                for="languageOptions">Speech API Region</label>
-                            <!-- For the full list of supported languages see: https://docs.microsoft.com/azure/cognitive-services/speech-service/supported-languages -->
-                            <select id="regionOptions" class="select__input"
-                                onchange="ddlChange(this,'lblregionOptions')">
-                                <option value="westus" selected="selected">West US</option>
-                                <option value="southcentralus">South Central US</option>
-                                <option value="westus2">West US2</option>
-                                <option value="eastus">East US</option>
-                                <option value="eastus2">East US2</option>
-                                <option value="eastasia">East Asia</option>
-                                <option value="southeastasia">South East Asia</option>
-                                <option value="northeurope">North Europe</option>
-                                <option value="westeurope">West Europe</option>
-                            </select>
-                            <span aria-hidden="true" class="select__selectedText"><label id="lblregionOptions">West
-                                    US</label><svg viewBox="0 0 24 24" class="valign-middle select__icon"
-                                    preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false"
-                                    style="width: 28px; height: 28px; overflow: visible;">
-                                    <path
-                                        d="M11.96 15.5c-.206 0-.402-.084-.546-.232l-5.188-5.33c-.3-.31-.3-.81 0-1.12.3-.31.79-.31 1.093 0l4.64 4.767 4.723-4.853c.3-.31.79-.31 1.09 0 .303.31.303.812.002 1.122l-5.27 5.414c-.145.148-.34.232-.546.232">
-                                    </path>
-                                </svg></span>
-                        </div>
-                    </div>
-
-                    <div class="field mb2">
-                        <div class="select "><label
-                                class="floatLabel color-textBlackSoft floatLabel--isActive select__floatLabel"
-                                for="languageOptions">Reponse Format</label>
-                            <!-- For the full list of supported languages see: https://docs.microsoft.com/azure/cognitive-services/speech-service/supported-languages -->
-                            <select id="formatOptions" class="select__input"
-                                onchange="ddlChange(this,'lblformatOptions')">
-                                <option value="Simple" selected="selected">Simple Result</option>
-                                <option value="Detailed">Detailed Result</option>
-                            </select>
-                            <span aria-hidden="true" class="select__selectedText"><label id="lblformatOptions">Simple
-                                    Result</label><svg viewBox="0 0 24 24" class="valign-middle select__icon"
-                                    preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false"
-                                    style="width: 28px; height: 28px; overflow: visible;">
-                                    <path
-                                        d="M11.96 15.5c-.206 0-.402-.084-.546-.232l-5.188-5.33c-.3-.31-.3-.81 0-1.12.3-.31.79-.31 1.093 0l4.64 4.767 4.723-4.853c.3-.31.79-.31 1.09 0 .303.31.303.812.002 1.122l-5.27 5.414c-.145.148-.34.232-.546.232">
-                                    </path>
-                                </svg></span>
-                        </div>
-                    </div>
-
+                   
                     <div class="field mb2">
                         <div class="field__inputWrapper flex">
                             <label class="floatLabel color-textBlackSoft floatLabel--isActive" for="phrases">Phrases List (';' separated)</label>
