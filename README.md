@@ -1,2 +1,4 @@
-# sixspeech2020
-Speech Lab at Starbucks SIX Feb 2020
+# Overview
+
+The basics of Azure's Speech SDK
+
