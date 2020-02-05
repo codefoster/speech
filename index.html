@@ -23,14 +23,14 @@
                     <div class="field mb2">
                         <div class="field__inputWrapper flex">
                             <label class="floatLabel color-textBlackSoft floatLabel--isActive" for="key">Speech API Key</label>
-                            <input id="key" class="fieldInput" value="001b96daebda42a78f5b2e8db30213a2" />
+                            <input id="key" class="fieldInput" value="" />
                         </div>
                     </div>
 
                     <div class="field mb2">
                         <div class="field__inputWrapper flex">
                             <label class="floatLabel color-textBlackSoft floatLabel--isActive" for="regionOptions">Speech API Region</label>
-                            <input id="region" class="fieldInput" value="westus2" />
+                            <input id="region" class="fieldInput" value="" />
                         </div>
                     </div>
 
@@ -96,18 +96,22 @@
                     </div>
 
                     <div class="field mb2">
-                        <textarea id="result" style="display: inline-block;width:500px;height:200px"></textarea>
+                        <textarea id="recognitionResult" style="display: inline-block;width:500px;height:200px"></textarea>
                     </div>
 
-                    <div class="field mb2" style="display: none;">
+                    <div class="field mb2" style="display: block;">
                         <div class="field__inputWrapper flex">
                             <label class="floatLabel color-textBlackSoft floatLabel--isActive" for="appId">LUIS APP ID</label>
-                            <input id="appId" class="fieldInput" />
+                            <input id="appId" class="fieldInput" value="" />
                         </div>
                     </div>
 
-                    <div class="field mb2" style="display: none;">
+                    <div class="field mb2" style="display: block;">
                         <button id="getIntentsButton" class="sb-button sb-button--positive">Get Intents</button>
+                    </div>
+
+                    <div class="field mb2">
+                        <textarea id="intentResult" style="display: inline-block;width:500px;height:80px"></textarea>
                     </div>
                 </div>
             </div>
