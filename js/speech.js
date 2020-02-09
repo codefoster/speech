@@ -1,17 +1,15 @@
-let recognitionResult, intentResult;
+let recognitionResult;
 let key, appId, phrases;
 let region;
 let languageOptions;
 let recognizer;
-let recognizeButton, getIntentsButton;
+let recognizeButton;
 let soundContext = new AudioContext();
 
 document.addEventListener("DOMContentLoaded", () => {
     createBtn = document.getElementById("createBtn");
     recognizeButton = document.getElementById("recognizeButton");
-    getIntentsButton = document.getElementById("getIntentsButton");
     recognitionResult = document.getElementById("recognitionResult");
-    intentResult = document.getElementById("intentResult");
     key = document.getElementById("key");
     appId = document.getElementById("appId");
     phrases = document.getElementById("phrases");
@@ -61,30 +59,9 @@ document.addEventListener("DOMContentLoaded", () => {
         setButtonEnabled(recognizeButton, false);
     });
 
-    getIntentsButton.addEventListener("click", async () => {
-        try {
-            let query = encodeURIComponent(recognitionResult.value);
-            let response = await fetch(
-                `https://westus2.api.cognitive.microsoft.com/luis/prediction/v3.0/apps/${appId.value}/slots/staging/predict?query=${query}&verbose=true`,
-                { headers: { "Ocp-Apim-Subscription-Key": "b393ca1b09fd454f9870525f7efd9c41" } }
-            )
-            let data = await response.json();
-
-            intentResult.innerHTML = data.prediction.topIntent;
-
-            console.log("Fetched intents...")
-            console.dir(data);
-        }
-        catch (exc) {
-            console.log(exc);
-        }
-    })
-
     setButtonEnabled(recognizeButton, true);
 });
 
 function setButtonEnabled(button, enabled = true) {
     button.disabled = !enabled;
-    if (enabled) button.classList.remove("sb-button--black");
-    else button.classList.add("sb-button--black");
 }
