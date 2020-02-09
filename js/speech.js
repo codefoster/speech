@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
     recognitionResult = document.getElementById("recognitionResult");
     key = document.getElementById("key");
     appId = document.getElementById("appId");
-    phrases = document.getElementById("phrases");
     languageOptions = document.getElementById("languageOptions");
     region = document.getElementById("region");
 
@@ -25,13 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const speechConfig = SpeechSDK.SpeechConfig.fromSubscription(key.value, region.value);
         speechConfig.speechRecognitionLanguage = languageOptions.value;
         recognizer = new SpeechSDK.SpeechRecognizer(speechConfig, audioConfig);
-
-        // add  phrases
-        if (phrases !== "") {
-            let phraseListGrammar = SpeechSDK.PhraseListGrammar.fromRecognizer(recognizer);
-            phraseListGrammar.addPhrase(phrases.value.split(";"));
-        }
-
         recognizer.recognizing = (s, e) => recognitionResult.innerHTML = e.result.text;
         recognizer.recognized = (s, e) => recognitionResult.innerHTML = e.result.text;
         recognizer.canceled = (s, e) => console.log("Recognition cancelled");
