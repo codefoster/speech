@@ -6,9 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Azure Speech</title>
-    <link href="css/starbucks/style.starbucks.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/themes/prism.min.css" rel="stylesheet" />
-
+    <link href="css/shiny.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -17,30 +15,27 @@
             <div class="flex-auto">
                 <div class="size6of12 absoluteCenter-x">
 
-                    <h3 class="sb-heading mb2 color-textBlackSoft" tabindex="-1">
+                    <h3 class="sh-heading mb2 color-textBlackSoft" tabindex="-1">
                         Azure Speech Sample
                     </h3>
                     <div class="field mb2">
                         <div class="field__inputWrapper flex">
                             <label class="floatLabel color-textBlackSoft floatLabel--isActive" for="key">Speech API Key</label>
-                            <input id="key" class="fieldInput" value="" />
+                            <input id="key" class="fieldInput" value="001b96daebda42a78f5b2e8db30213a2" />
                         </div>
                     </div>
 
                     <div class="field mb2">
                         <div class="field__inputWrapper flex">
                             <label class="floatLabel color-textBlackSoft floatLabel--isActive" for="regionOptions">Speech API Region</label>
-                            <input id="region" class="fieldInput" value="" />
+                            <input id="region" class="fieldInput" value="westus2" />
                         </div>
                     </div>
 
                     <div class="field mb2">
-                        <div class="select "><label
-                                class="floatLabel color-textBlackSoft floatLabel--isActive select__floatLabel"
-                                for="languageOptions">Language</label>
+                        <div class="select "><label class="floatLabel color-textBlackSoft floatLabel--isActive select__floatLabel" for="languageOptions">Language</label>
                             <!-- For the full list of supported languages see: https://docs.microsoft.com/azure/cognitive-services/speech-service/supported-languages -->
-                            <select id="languageOptions" class="select__input"
-                                onchange="ddlChange(this,'lbllanguageOptions')">
+                            <select id="languageOptions" class="select__input" onchange="ddlChange(this,'lbllanguageOptions')">
                                 <option value="ar-EG">Arabic - EG</option>
                                 <option value="ca-ES">Catalan - ES</option>
                                 <option value="da-DK">Danish - DK</option>
@@ -91,27 +86,27 @@
                     </div>
 
                     <div class="field mb2">
-                        <button id="recognizeButton" class="sb-button sb-button--positive">Recognize</button>
-                        <button id="stopButton" disabled="disabled" class="sb-button sb-button--positive sb-button--black">STOP</button>
+                        <button id="recognizeButton" class="sh-button sh-button--positive">Recognize</button>
+                        <button id="stopButton" disabled="disabled" class="sh-button sh-button--positive sh-button--black">STOP</button>
                     </div>
 
                     <div class="field mb2">
-                        <textarea id="recognitionResult" style="display: inline-block;width:500px;height:200px"></textarea>
+                        <textarea id="recognitionResult" style="display: inline-block;width:600px;height:200px"></textarea>
                     </div>
 
                     <div class="field mb2" style="display: block;">
                         <div class="field__inputWrapper flex">
                             <label class="floatLabel color-textBlackSoft floatLabel--isActive" for="appId">LUIS APP ID</label>
-                            <input id="appId" class="fieldInput" value="" />
+                            <input id="appId" class="fieldInput" value="d3d8f851-70ec-4e2e-9c5b-7c54c1fa388d" />
                         </div>
                     </div>
 
                     <div class="field mb2" style="display: block;">
-                        <button id="getIntentsButton" class="sb-button sb-button--positive">Get Intents</button>
+                        <button id="getIntentsButton" class="sh-button sh-button--positive">Get Intents</button>
                     </div>
 
                     <div class="field mb2">
-                        <textarea id="intentResult" style="display: inline-block;width:500px;height:80px"></textarea>
+                        <textarea id="intentResult" style="display: inline-block;width:600px;height:80px"></textarea>
                     </div>
                 </div>
             </div>
@@ -119,11 +114,7 @@
 
     <!-- Speech SDK REFERENCE -->
     <script src="js\SpeechSDK-JavaScript-1.9.0\microsoft.cognitiveservices.speech.sdk.bundle-min.js"></script>
-    <script src="js\six_speech.js"></script>
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/components/prism-core.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/components/prism-json.min.js"></script>
+    <script src="js\speech.js"></script>
 </body>
 
 </html>
