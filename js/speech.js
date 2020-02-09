@@ -3,13 +3,12 @@ let key, appId, phrases;
 let region;
 let languageOptions;
 let recognizer;
-let recognizeButton, stopButton, getIntentsButton;
+let recognizeButton, getIntentsButton;
 let soundContext = new AudioContext();
 
 document.addEventListener("DOMContentLoaded", () => {
     createBtn = document.getElementById("createBtn");
     recognizeButton = document.getElementById("recognizeButton");
-    stopButton = document.getElementById("stopButton");
     getIntentsButton = document.getElementById("getIntentsButton");
     recognitionResult = document.getElementById("recognitionResult");
     intentResult = document.getElementById("intentResult");
@@ -47,23 +46,19 @@ document.addEventListener("DOMContentLoaded", () => {
         recognizer.recognizeOnceAsync(
             result => {
                 recognitionResult.innerHTML = result.text + "\r\n";
-                stopButton.click();
+                recognizer.close();
+                recognizer = undefined;
+                setButtonEnabled(recognizeButton, true);
             },
             err => {
                 console.error("ERROR: " + err);
                 recognitionResult.innerHTML += "ERROR: " + err;
-                stopButton.click();
+                recognizer.close();
+                recognizer = undefined;
+                setButtonEnabled(recognizeButton, true);
             });
 
         setButtonEnabled(recognizeButton, false);
-        setButtonEnabled(stopButton, true);
-    });
-
-    stopButton.addEventListener("click", () => {
-        setButtonEnabled(recognizeButton, true);
-        setButtonEnabled(stopButton, false);
-        recognizer.close();
-        recognizer = undefined;
     });
 
     getIntentsButton.addEventListener("click", async () => {

@@ -10,32 +10,35 @@
 </head>
 
 <body>
-    <main id="main-content" role="main" class="px3 lg-px7">
-        <div class="relative flex-auto">
-            <div class="flex-auto">
-                <div class="size6of12 absoluteCenter-x">
+    <main id="main-content" role="main">
+        <div style="position: relative;flex: 1 1 auto;min-width: 0;min-height: 0;">
+            <div style="flex: 1 1 auto;min-width: 0;min-height: 0;">
+                <div class="fieldContainer" style="position: absolute;left: 50%;transform: translateX(-50%);">
 
-                    <h3 class="sh-heading mb2 color-textBlackSoft" tabindex="-1">
+                    <h3 tabindex="-1" style="font-weight: 400;">
                         Azure Speech Sample
                     </h3>
-                    <div class="field mb2">
-                        <div class="field__inputWrapper flex">
-                            <label class="floatLabel color-textBlackSoft floatLabel--isActive" for="key">Speech API Key</label>
-                            <input id="key" class="fieldInput" value="001b96daebda42a78f5b2e8db30213a2" />
+                    <div>
+                        <div class="field">
+                            <label class="floatLabel floatLabel--isActive" for="key">Speech API Key</label>
+                            <input id="key" class="fieldInput" value="" />
                         </div>
                     </div>
 
-                    <div class="field mb2">
-                        <div class="field__inputWrapper flex">
-                            <label class="floatLabel color-textBlackSoft floatLabel--isActive" for="regionOptions">Speech API Region</label>
-                            <input id="region" class="fieldInput" value="westus2" />
+                    <div>
+                        <div class="field">
+                            <label class="floatLabel floatLabel--isActive" for="regionOptions">Speech API Region</label>
+                            <input id="region" class="fieldInput" value="" />
                         </div>
                     </div>
 
-                    <div class="field mb2">
-                        <div class="select "><label class="floatLabel color-textBlackSoft floatLabel--isActive select__floatLabel" for="languageOptions">Language</label>
+                    <div>
+                        <div class="select">
+                            <label class="floatLabel floatLabel--isActive select__floatLabel"
+                                for="languageOptions">Language</label>
                             <!-- For the full list of supported languages see: https://docs.microsoft.com/azure/cognitive-services/speech-service/supported-languages -->
-                            <select id="languageOptions" class="select__input" onchange="ddlChange(this,'lbllanguageOptions')">
+                            <select id="languageOptions" class="select__input"
+                                onchange="ddlChange(this,'lbllanguageOptions')">
                                 <option value="ar-EG">Arabic - EG</option>
                                 <option value="ca-ES">Catalan - ES</option>
                                 <option value="da-DK">Danish - DK</option>
@@ -67,45 +70,45 @@
                                 <option value="zh-HK">Chinese - HK</option>
                                 <option value="zh-TW">Chinese - TW</option>
                             </select>
-                            <span aria-hidden="true" class="select__selectedText"><label id="lbllanguageOptions">English
-                                    - US</label><svg viewBox="0 0 24 24" class="valign-middle select__icon"
-                                    preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false"
-                                    style="width: 28px; height: 28px; overflow: visible;">
+                            <span aria-hidden="true" class="select__selectedText">
+                                <label id="lbllanguageOptions">English - US</label>
+                                <svg viewBox="0 0 24 24" class="select__icon" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false" style="width: 28px; height: 28px; overflow: visible;vertical-align: middle;">
                                     <path
                                         d="M11.96 15.5c-.206 0-.402-.084-.546-.232l-5.188-5.33c-.3-.31-.3-.81 0-1.12.3-.31.79-.31 1.093 0l4.64 4.767 4.723-4.853c.3-.31.79-.31 1.09 0 .303.31.303.812.002 1.122l-5.27 5.414c-.145.148-.34.232-.546.232">
                                     </path>
-                                </svg></span>
+                                </svg>
+                            </span>
                         </div>
                     </div>
 
-                    <div class="field mb2">
-                        <div class="field__inputWrapper flex">
-                            <label class="floatLabel color-textBlackSoft floatLabel--isActive" for="phrases">Phrases List (';' separated)</label>
+                    <div>
+                        <div class="field">
+                            <label class="floatLabel floatLabel--isActive" for="phrases">Phrases List (';' separated)</label>
                             <input id="phrases" class="fieldInput" />
                         </div>
                     </div>
 
-                    <div class="field mb2">
-                        <button id="recognizeButton" class="sh-button sh-button--positive">Recognize</button>
-                        <button id="stopButton" disabled="disabled" class="sh-button sh-button--positive sh-button--black">STOP</button>
+                    <div>
+                        <button id="recognizeButton">Recognize</button>
                     </div>
 
-                    <div class="field mb2">
-                        <textarea id="recognitionResult" style="display: inline-block;width:600px;height:200px"></textarea>
+                    <div>
+                        <textarea id="recognitionResult"
+                            style="display: inline-block;width:600px;height:200px"></textarea>
                     </div>
 
-                    <div class="field mb2" style="display: block;">
-                        <div class="field__inputWrapper flex">
-                            <label class="floatLabel color-textBlackSoft floatLabel--isActive" for="appId">LUIS APP ID</label>
-                            <input id="appId" class="fieldInput" value="d3d8f851-70ec-4e2e-9c5b-7c54c1fa388d" />
+                    <div>
+                        <div class="field">
+                            <label class="floatLabel floatLabel--isActive" for="appId">LUIS APP ID</label>
+                            <input id="appId" class="fieldInput" value="" />
                         </div>
                     </div>
 
-                    <div class="field mb2" style="display: block;">
-                        <button id="getIntentsButton" class="sh-button sh-button--positive">Get Intents</button>
+                    <div>
+                        <button id="getIntentsButton">Get Intents</button>
                     </div>
 
-                    <div class="field mb2">
+                    <div>
                         <textarea id="intentResult" style="display: inline-block;width:600px;height:80px"></textarea>
                     </div>
                 </div>
