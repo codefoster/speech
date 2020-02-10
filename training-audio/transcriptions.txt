@@ -1,0 +1,20 @@
+﻿8-grain-roll.wav	eight grain roll
+almond-croissant.wav	almond croissant
+banana-nut-bread.wav	banana nut bread
+birthday-cake-pop.wav	birthday cake pop
+blueberry-muffin.wav	blueberry muffin
+chocolate-chip-cookie-dough-cake-pop.wav	chocolate chip cookie dough cake pop
+chonga-bagel.wav	chonga bagel
+cold-brew-coffee.wav	cold brew coffee
+cold-brew-with-cascara-cold-foam.wav	cold brew with cascara cold foam
+iced-coffee-with-milk.wav	iced coffee with milk
+iced-coffee.wav iced coffee
+iced-espresso-classics-vanilla-latte.wav	iced espresso classics vanilla latte
+nitro-cold-brew-with-sweet-cream.wav	nitro cold brew with sweet cream
+nitro-cold-brew.wav nitro cold brew
+nitro-lemon-fog.wav nitro lemon fog
+pink-drink.wav  pink drink
+teavana-shaken-iced-black-tea.wav	teavana shaken iced black tea
+teavana-shaken-strawberry-green-tea-infusion.wav	teavana shaken strawberry green tea infusion
+vanilla-sweet-cream-cold-brew.wavvanilla sweet cream cold brew
+violet-drink.wav	violet drink
