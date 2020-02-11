@@ -1,5 +1,5 @@
 let recognitionResult, intentResult;
-let key, appId, luisKey, phrases;
+let key, appId, luisKey, luisRegion, phrases;
 let region;
 let languageOptions;
 let recognizer;
@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     key = document.getElementById("key");
     appId = document.getElementById("appId");
     luisKey = document.getElementById("luisKey");
+    luisRegion = document.getElementById("luisRegion");
     phrases = document.getElementById("phrases");
     languageOptions = document.getElementById("languageOptions");
     region = document.getElementById("region");
@@ -66,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
         try {
             let query = encodeURIComponent(recognitionResult.value);
             let response = await fetch(
-                `https://westus2.api.cognitive.microsoft.com/luis/prediction/v3.0/apps/${appId.value}/slots/staging/predict?query=${query}&verbose=true`,
+                `https://${luisRegion.value}.api.cognitive.microsoft.com/luis/prediction/v3.0/apps/${appId.value}/slots/staging/predict?query=${query}&verbose=true`,
                 { headers: { "Ocp-Apim-Subscription-Key": luisKey.value } }
             )
             let data = await response.json();
